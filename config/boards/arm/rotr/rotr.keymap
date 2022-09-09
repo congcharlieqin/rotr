@@ -11,12 +11,44 @@
 };
 
 / {
+    macros {
+        shft_cmd_a: shft_cmd_a {
+            label = "shft_cmd_a";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCMD>
+                , <&macro_tap &kp A>
+                , <&macro_release &kp LSHFT &kp LCMD>
+                ;
+        };
+        shft_cmd_v: shft_cmd_v {
+            label = "shft_cmd_v";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCMD>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LSHFT &kp LCMD>
+                ;
+        };
+        cmd_w: cmd_w {
+            label = "cmd_w";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+    };
 	keymap {
 		compatible = "zmk,keymap";
 
 		default_layer {
-			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			//MUTE/UNMUTE | VIDEO ON/OFF | ENDCALL
+			bindings = <&shft_cmd_a &shift_cmd_v &cmd_w>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <255>;
@@ -40,15 +72,6 @@
 			r = <242>;
 			g = <137>;
 			b = <0>;
-		};
-		three {
-			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
-		};
-		shift {
-			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&bt BT_CLR &trans &rgb_ug RGB_TOG>;
-			sensor-bindings = <&def_lshft>;
 		};
 	};
 };

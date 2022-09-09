@@ -48,7 +48,7 @@
 
 		default_layer {
 			//MUTE/UNMUTE | VIDEO ON/OFF | ENDCALL
-			bindings = <&shft_cmd_a &shift_cmd_v &cmd_w>;
+			bindings = <&shft_cmd_a &shft_cmd_v &cmd_w>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <255>;

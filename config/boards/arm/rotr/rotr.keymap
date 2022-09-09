@@ -48,7 +48,7 @@
 
 		default_layer {
 			//MUTE/UNMUTE | VIDEO ON/OFF | ENDCALL
-			bindings = <&shft_cmd_a &shft_cmd_v &cmd_w>;
+			bindings = <&shft_cmd_a &lt 4 &shft_cmd_v &cmd_w>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <255>;
@@ -60,9 +60,9 @@
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
-			r = <192>;
-			g = <111>;
-			b = <217>;
+			r = <152>;
+			g = <64>;
+			b = <173>;
 		};
 		two {
 			//PREV | PLAY/PAUSE | NEXT
@@ -72,6 +72,11 @@
 			r = <242>;
 			g = <137>;
 			b = <0>;
+		};
+		shift {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&bt BT_CLR &trans &rgb_ug RGB_TOG>;
+			sensor-bindings = <&def_lshft>;
 		};
 	};
 };

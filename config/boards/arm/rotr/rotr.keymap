@@ -73,6 +73,10 @@
 			g = <137>;
 			b = <0>;
 		};
+		three {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+		};
 		shift {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&bt BT_CLR &trans &rgb_ug RGB_TOG>;
